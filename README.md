@@ -1,0 +1,2 @@
+# TradeCardsDoc
+Correção da Documentação

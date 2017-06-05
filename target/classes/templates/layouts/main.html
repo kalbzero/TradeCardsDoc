@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
 <head>
 
@@ -62,10 +64,9 @@
             <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
         </div>
 
+		<!-- Here is the part that is overwrite -->
 		<div layout:fragment="content"></div>
 		
-        <!-- /#page-content-wrapper -->
-
     </div>
     <!-- /#wrapper -->
 

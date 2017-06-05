@@ -66,12 +66,12 @@
 		    <version>1.11.1</version>
 		</dependency>
 		
-		<!-- Thymeleaf Dialects -->
+		<!-- Thymeleaf Extras -->
 		<dependency>
-		  <groupId>nz.net.ultraq.thymeleaf</groupId>
-		  <artifactId>thymeleaf-layout-dialect</artifactId>
-		  <version>2.0.5</version>
-		</dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity4</artifactId>
+            <version>2.1.2.RELEASE</version>
+        </dependency>
 		
 	</dependencies>
 

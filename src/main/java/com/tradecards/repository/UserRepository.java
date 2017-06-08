@@ -1,11 +1,11 @@
-package com.repository;
+package com.tradecards.repository;
 
 import java.util.*;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.domain.User;
+import com.tradecards.domain.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {

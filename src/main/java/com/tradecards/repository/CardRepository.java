@@ -1,10 +1,10 @@
-package com.repository;
+package com.tradecards.repository;
 
 import java.util.*;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.domain.Card;
+import com.tradecards.domain.Card;
 /**
  * 
  */

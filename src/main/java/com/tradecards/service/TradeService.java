@@ -1,4 +1,4 @@
-package com.service;
+package com.tradecards.service;
 
 import java.util.*;
 

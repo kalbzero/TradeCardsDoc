@@ -1,11 +1,11 @@
-package com.Service;
+package com.service;
 
 import java.util.*;
 
 import org.springframework.stereotype.Service;
 
-import com.Repository.CardRepository;
-import com.Domain.Card;
+import com.domain.Card;
+import com.repository.CardRepository;
 /**
  * @author Edward Ramos
  */

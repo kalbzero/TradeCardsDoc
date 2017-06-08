@@ -1,11 +1,11 @@
-package com.Service;
+package com.service;
 
 import java.util.*;
 
 import org.springframework.stereotype.Service;
 
-import com.Domain.User;
-import com.Repository.UserRepository;
+import com.domain.User;
+import com.repository.UserRepository;
 
 /**
  * @author Edward Ramos

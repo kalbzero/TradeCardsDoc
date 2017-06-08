@@ -1,9 +1,9 @@
-package com.Controller;
+package com.controller;
 
 import org.springframework.stereotype.Controller;
 
-import com.Service.CardService;
-import com.Service.UserService;
+import com.service.CardService;
+import com.service.UserService;
 
 /**
  * @author Edward Ramos

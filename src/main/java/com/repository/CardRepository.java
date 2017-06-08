@@ -1,10 +1,10 @@
-package com.Repository;
+package com.repository;
 
 import java.util.*;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.Domain.Card;
+import com.domain.Card;
 /**
  * 
  */

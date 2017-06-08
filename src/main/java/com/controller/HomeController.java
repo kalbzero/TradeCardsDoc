@@ -1,4 +1,4 @@
-package com.Controller;
+package com.controller;
 
 import java.security.Principal;
 

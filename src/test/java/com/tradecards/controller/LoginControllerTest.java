@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.tradecards.controller;
 /*
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.fluentlenium.assertj.FluentLeniumAssertions.assertThat;

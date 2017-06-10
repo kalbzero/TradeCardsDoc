@@ -1,14 +1,12 @@
 package com.tradecards.domain;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class State {
 
 	@Id
-    @GeneratedValue
 	private String ufId;
 	private String name;
 	

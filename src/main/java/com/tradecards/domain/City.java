@@ -3,6 +3,7 @@ package com.tradecards.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class City {
@@ -11,6 +12,8 @@ public class City {
     @GeneratedValue
 	private Long cityId;
 	private String name;
+	
+	@ManyToOne
 	private State state;
 	
 	/* Constructor */

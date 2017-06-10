@@ -5,6 +5,7 @@ import java.util.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  * @author Edward Ramos
@@ -20,6 +21,8 @@ public class User {
     private String fullName;   
     private String password;
     private String phoneNumber;
+    
+    @ManyToOne
     private City city;
 
 

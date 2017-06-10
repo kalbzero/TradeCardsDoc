@@ -1,5 +1,5 @@
 -- State
-insert into STATE (ufId, name) VALUES
+insert into STATE (uf_id, name) VALUES
 ('AC', 'Acre'),
 ('AL', 'Alagoas'),
 ('AP', 'Amapa'),
@@ -29,46 +29,37 @@ insert into STATE (ufId, name) VALUES
 ('TO', 'Tocantins');
 
 -- City
-insert into CITY (cityId, name, state) VALUES
-(1,	'Rio Branco',	'AC'),
-(2,	'Maceió' ,		'AL'),
-(3,	'Macapá' ,		'AP'),
-(4,	'Manaus' ,		'AM'),
-(5,	'Salvador',		'BA'),
-(6,	'Fortaleza',	'CE'),
-(7,	'Brasília' ,	'DF'),
-(8,	'Vitória' ,		'ES'),
-(9,	'Goiânia' ,		'GO'),
-(10, 'São Luís' ,	'MA'),
-(11, 'Cuiabá' ,		'MT'),
-(12, 'Campo Grande','MS'),
-(13, 'Belo Horizonte','MG'),
-(14, 'Belém' ,		'PA'),
-(15, 'João Pessoa',	'PB'),
-(16, 'Curitiba' ,	'PR'),
-(17, 'Recife' ,		'PE'),
-(18, 'Teresina' ,	'PI'),
-(19, 'Rio de Janeiro','RJ'),
-(20, 'Natal' ,		'RN'),
-(21, 'Porto Alegre','RS'),
-(22, 'Porto Velho',	'RO'),
-(23, 'Boa Vista',	'RR'),
-(24, 'Florianópolis','SC'),
-(25, 'São Paulo','SP'),
-(26, 'Aracaju','SE'), 
-(27, 'Palmas', 'TO'); 
-
-
-
--- Users 
-insert into USER (userId, email, fullName, password, phoneNumber, city) VALUES
-(1, 'fulano1@email.com', 'Fulano Silva', '', '(051)987654321', 1);
-
--- Admins
-
+insert into CITY (city_id, name) VALUES
+(1,	'Rio Branco'),
+(2,	'Maceió' ),
+(3,	'Macapá' ),
+(4,	'Manaus'),
+(5,	'Salvador'),
+(6,	'Fortaleza'),
+(7,	'Brasília'),
+(8,	'Vitória'),
+(9,	'Goiânia'),
+(10, 'São Luís'),
+(11, 'Cuiabá'),
+(12, 'Campo Grande'),
+(13, 'Belo Horizonte'),
+(14, 'Belém'),
+(15, 'João Pessoa'),
+(16, 'Curitiba'),
+(17, 'Recife'),
+(18, 'Teresina'),
+(19, 'Rio de Janeiro'),
+(20, 'Natal'),
+(21, 'Porto Alegre'),
+(22, 'Porto Velho'),
+(23, 'Boa Vista'),
+(24, 'Florianópolis'),
+(25, 'São Paulo'),
+(26, 'Aracaju'), 
+(27, 'Palmas'); 
 
 -- Cards
-insert into CARD (cardId, edition, name, isFoil, isAltered) VALUES
+insert into CARD (card_id, edition, name, is_foil, is_altered) VALUES
 (1, 'lorwyn', 'goblin', FALSE, FALSE),
 (2, 'lorwyn', 'goblin', TRUE, FALSE),
 (3, 'lorwyn', 'goblin', FALSE, TRUE),
@@ -88,6 +79,4 @@ insert into CARD (cardId, edition, name, isFoil, isAltered) VALUES
 (17, 'lorwyn', 'zumbi', FALSE, FALSE),
 (18, 'lorwyn', 'zumbi', TRUE, FALSE),
 (19, 'lorwyn', 'zumbi', FALSE, TRUE),
-(20, 'lorwyn', 'zumbi', TRUE, TRUE),
-
--- Trades
+(20, 'lorwyn', 'zumbi', TRUE, TRUE);

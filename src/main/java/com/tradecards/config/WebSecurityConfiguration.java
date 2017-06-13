@@ -23,6 +23,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
                 "/public/**",
                 "/dist/**",
                 "/db/**",
+                "/prototype/**",
                 "/test/**"
         );
     }

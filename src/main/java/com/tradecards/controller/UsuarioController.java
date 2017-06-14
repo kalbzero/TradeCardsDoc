@@ -4,20 +4,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.tradecards.service.UserService;
+import com.tradecards.service.UsuarioService;
 
 /**
  * @author Edward Ramos
  */
 @Controller
 @RequestMapping("/user")
-public class UserController {
+public class UsuarioController {
 
-   private UserService userService;
+   private UsuarioService usuarioService;
    
    /* Constructor */
-   public UserController (UserService userService){
-	   this.userService = userService;
+   public UsuarioController (UsuarioService usuarioService){
+	   this.usuarioService = usuarioService;
    }
 
 

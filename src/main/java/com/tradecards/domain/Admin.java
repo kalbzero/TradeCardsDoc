@@ -6,15 +6,15 @@ import javax.persistence.Entity;
  * @author Edward Ramos
  */
 @Entity
-public class Admin extends User {
+public class Admin extends Usuario {
 
-   
-	/* Constructor */
-    public Admin(Long userId, String email, String fullName, String password, 
-    		String phoneNumber, City city) {
-		super(userId, email, fullName, password, phoneNumber, city);
+	public Admin(Long id, String email, String nomeCompleto, String senha, String telefone, Cidade cidade) {
+		super(id, email, nomeCompleto, senha, telefone, cidade);
 		
 	}
+
+   
+	
     
     
 

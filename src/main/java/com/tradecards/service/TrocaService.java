@@ -1,16 +1,15 @@
 package com.tradecards.service;
 
-import java.util.*;
 
 /**
  * @author Edward Ramos
  */
-public class TradeService {
+public class TrocaService {
 
     /**
      * Default constructor
      */
-    public TradeService() {
+    public TrocaService() {
     }
 
 }

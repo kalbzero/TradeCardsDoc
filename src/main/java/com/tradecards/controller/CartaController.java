@@ -4,7 +4,7 @@ package com.tradecards.controller;
 /**
  * @author Edward Ramos
  */
-public class CardController {
+public class CartaController {
 
    
 

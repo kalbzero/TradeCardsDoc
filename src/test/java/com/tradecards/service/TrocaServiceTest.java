@@ -1,5 +1,5 @@
 package com.tradecards.service;
 
-public class CardServiceTest {
+public class TrocaServiceTest {
 
 }

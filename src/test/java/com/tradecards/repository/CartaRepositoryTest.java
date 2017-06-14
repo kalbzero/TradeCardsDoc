@@ -1,5 +1,5 @@
 package com.tradecards.repository;
 
-public class CardRepositoryTest {
+public class CartaRepositoryTest {
 
 }

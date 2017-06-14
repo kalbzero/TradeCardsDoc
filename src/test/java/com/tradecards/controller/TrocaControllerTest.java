@@ -1,5 +1,5 @@
 package com.tradecards.controller;
 
-public class CardControllerTest {
+public class TrocaControllerTest {
 
 }

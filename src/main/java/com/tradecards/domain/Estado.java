@@ -1,29 +1,40 @@
 package com.tradecards.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Estado {
 
 	@Id
-	private String id;
+	@GeneratedValue
+	private Long id;
+	private String uf;
 	private String nome;
 	
 	/* Constructor */
-	public Estado(String id, String nome) {
-		super();
+	public Estado(Long id, String uf, String nome) {
 		this.id = id;
+		this.uf = uf;
 		this.nome = nome;
 	}
 
 	/* Getters 'n' Setters */
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getUf() {
+		return uf;
+	}
+
+	public void setUf(String uf) {
+		this.uf = uf;
 	}
 
 	public String getNome() {
@@ -33,7 +44,5 @@ public class Estado {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-	
 	
 }

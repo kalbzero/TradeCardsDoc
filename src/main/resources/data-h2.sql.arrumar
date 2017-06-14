@@ -1,35 +1,35 @@
 -- State
-insert into STATE (uf_id, name) VALUES
-('AC', 'Acre'),
-('AL', 'Alagoas'),
-('AP', 'Amapa'),
-('AM', 'Amazonas'),
-('BA', 'Bahia'),
-('CE', 'Ceara'),
-('DF', 'Distrito Federal'),
-('ES', 'Espirito Santo'),
-('GO', 'Goias'),
-('MA', 'Maranhao'),
-('MT', 'Mato Grosso'),
-('MS', 'Mato Grosso do Sul'),
-('MG', 'Minas Gerais'),
-('PA', 'Para'),
-('PB', 'Paraiba'),
-('PR', 'Parana'),
-('PE', 'Pernambuco'),
-('PI', 'Piaui'),
-('RJ', 'Rio de Janeiro'),
-('RN', 'Rio grande do Norte'),
-('RS', 'Rio Grande do Sul'),
-('RO', 'Rondonia'),
-('RR', 'Roraima'),
-('SC', 'Santa Catarina'),
-('SE', 'Sergipe'),
-('SP', 'Sao Paulo'),
-('TO', 'Tocantins');
+insert into ESTADO (state_id, uf, nome) VALUES
+(1, 'AC', 'Acre'),
+(2, 'AL', 'Alagoas'),
+(3, 'AP', 'Amapa'),
+(4, 'AM', 'Amazonas'),
+(5, 'BA', 'Bahia'),
+(6, 'CE', 'Ceara'),
+(7, 'DF', 'Distrito Federal'),
+(8, 'ES', 'Espirito Santo'),
+(9, 'GO', 'Goias'),
+(10, 'MA', 'Maranhao'),
+(11, 'MT', 'Mato Grosso'),
+(12, 'MS', 'Mato Grosso do Sul'),
+(13, 'MG', 'Minas Gerais'),
+(14, 'PA', 'Para'),
+(15, 'PB', 'Paraiba'),
+(16, 'PR', 'Parana'),
+(17, 'PE', 'Pernambuco'),
+(18, 'PI', 'Piaui'),
+(19, 'RJ', 'Rio de Janeiro'),
+(20, 'RN', 'Rio grande do Norte'),
+(21, 'RS', 'Rio Grande do Sul'),
+(22, 'RO', 'Rondonia'),
+(23, 'RR', 'Roraima'),
+(24, 'SC', 'Santa Catarina'),
+(25, 'SE', 'Sergipe'),
+(26, 'SP', 'Sao Paulo'),
+(27, 'TO', 'Tocantins');
 
 -- City
-insert into CITY (city_id, name) VALUES
+insert into CIDADE (cidade_id, nome) VALUES
 (1,	'Rio Branco'),
 (2,	'Maceió' ),
 (3,	'Macapá' ),
@@ -59,7 +59,7 @@ insert into CITY (city_id, name) VALUES
 (27, 'Palmas'); 
 
 -- Cards
-insert into CARD (card_id, edition, name, is_foil, is_altered) VALUES
+insert into CARTA (card_id, edicao, nome, eh_foil, eh_alterada) VALUES
 (1, 'lorwyn', 'goblin', FALSE, FALSE),
 (2, 'lorwyn', 'goblin', TRUE, FALSE),
 (3, 'lorwyn', 'goblin', FALSE, TRUE),

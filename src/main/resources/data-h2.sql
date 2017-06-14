@@ -1,5 +1,5 @@
 -- State
-insert into ESTADO (state_id, uf, nome) VALUES
+insert into ESTADO (id, uf, nome) VALUES
 (1, 'AC', 'Acre'),
 (2, 'AL', 'Alagoas'),
 (3, 'AP', 'Amapa'),
@@ -29,37 +29,37 @@ insert into ESTADO (state_id, uf, nome) VALUES
 (27, 'TO', 'Tocantins');
 
 -- City
-insert into CIDADE (cidade_id, nome) VALUES
-(1,	'Rio Branco'),
-(2,	'Maceió' ),
-(3,	'Macapá' ),
-(4,	'Manaus'),
-(5,	'Salvador'),
-(6,	'Fortaleza'),
-(7,	'Brasília'),
-(8,	'Vitória'),
-(9,	'Goiânia'),
-(10, 'São Luís'),
-(11, 'Cuiabá'),
-(12, 'Campo Grande'),
-(13, 'Belo Horizonte'),
-(14, 'Belém'),
-(15, 'João Pessoa'),
-(16, 'Curitiba'),
-(17, 'Recife'),
-(18, 'Teresina'),
-(19, 'Rio de Janeiro'),
-(20, 'Natal'),
-(21, 'Porto Alegre'),
-(22, 'Porto Velho'),
-(23, 'Boa Vista'),
-(24, 'Florianópolis'),
-(25, 'São Paulo'),
-(26, 'Aracaju'), 
-(27, 'Palmas'); 
+insert into CIDADE (id, nome, estado_id) VALUES
+(1,	'Rio Branco', 1),
+(2,	'Maceió', 2),
+(3,	'Macapá', 3),
+(4,	'Manaus', 4),
+(5,	'Salvador', 5),
+(6,	'Fortaleza', 6),
+(7,	'Brasília', 7),
+(8,	'Vitória', 8),
+(9,	'Goiânia', 9),
+(10, 'São Luís', 10),
+(11, 'Cuiabá', 11),
+(12, 'Campo Grande', 12),
+(13, 'Belo Horizonte', 13),
+(14, 'Belém', 14),
+(15, 'João Pessoa', 15),
+(16, 'Curitiba', 16),
+(17, 'Recife', 17),
+(18, 'Teresina', 18),
+(19, 'Rio de Janeiro', 18),
+(20, 'Natal', 20),
+(21, 'Porto Alegre', 21),
+(22, 'Porto Velho', 22),
+(23, 'Boa Vista', 23),
+(24, 'Florianópolis', 24),
+(25, 'São Paulo', 25),
+(26, 'Aracaju', 26), 
+(27, 'Palmas', 27); 
 
 -- Cards
-insert into CARTA (card_id, edicao, nome, eh_foil, eh_alterada) VALUES
+insert into CARTA (id, edicao, nome, eh_foil, eh_alterada) VALUES
 (1, 'lorwyn', 'goblin', FALSE, FALSE),
 (2, 'lorwyn', 'goblin', TRUE, FALSE),
 (3, 'lorwyn', 'goblin', FALSE, TRUE),

@@ -16,7 +16,7 @@ public class HomeController {
 	 */
 	@GetMapping("/")
     public String index(Principal principal) {
-        return principal != null ? "index" : "home";
+        return principal == null ? "/index" : "/user/home";
     }
 
 }

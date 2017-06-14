@@ -18,7 +18,9 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
                 "/webjars/**",
                  "/photos/**",
                 "/assets/**",
+                "index**",
                 "/img/**",
+                "/lib/**",
                 "/resources/**",
                 "/public/**",
                 "/dist/**",
@@ -27,7 +29,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
                 "/test/**"
         );
     }
-    /*
+    
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.antMatcher("/**").authorizeRequests().
@@ -41,10 +43,10 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
                  authenticated().and().logout().
                  logoutSuccessUrl("/").permitAll().and().csrf()
                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()).and().formLogin()
-                //.loginPage("/index").permitAll().and().logout().deleteCookies("remember-me")
+                .loginPage("/index").permitAll().and().logout().deleteCookies("remember-me")
                 ;
         http.csrf().disable();
 
     }
-    */
+    
 }

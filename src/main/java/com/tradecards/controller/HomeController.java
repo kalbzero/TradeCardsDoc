@@ -19,4 +19,8 @@ public class HomeController {
         return principal == null ? "/index" : "/user/home";
     }
 
+	@GetMapping("/error")
+    public String error() {
+        return "/error";
+    }
 }

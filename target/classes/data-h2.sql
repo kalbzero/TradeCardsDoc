@@ -80,3 +80,7 @@ insert into CARTA (id, edicao, nome, eh_foil, eh_alterada) VALUES
 (18, 'lorwyn', 'zumbi', TRUE, FALSE),
 (19, 'lorwyn', 'zumbi', FALSE, TRUE),
 (20, 'lorwyn', 'zumbi', TRUE, TRUE);
+
+-- USER
+insert into USUARIO (dtype, id, email, nome_completo, senha, telefone, cidade_id) values
+('admin', 1, 'admin1@email.com', 'fulano silva', '', '(051)9876-54321', 21);

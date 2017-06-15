@@ -26,6 +26,6 @@ public class HomeController {
 	
 	@GetMapping("/international")
     public String getInternationalPage() {
-        return "international";
+        return "/international";
     }
 }

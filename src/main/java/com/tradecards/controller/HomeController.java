@@ -23,4 +23,9 @@ public class HomeController {
     public String error() {
         return "/error";
     }
+	
+	@GetMapping("/international")
+    public String getInternationalPage() {
+        return "international";
+    }
 }

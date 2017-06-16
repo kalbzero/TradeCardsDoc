@@ -3,6 +3,7 @@ package com.tradecards.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Estado {
@@ -10,7 +11,11 @@ public class Estado {
 	@Id
 	@GeneratedValue
 	private Long id;
+	
+	@NotNull
 	private String uf;
+	
+	@NotNull
 	private String nome;
 	
 	/* Constructor */

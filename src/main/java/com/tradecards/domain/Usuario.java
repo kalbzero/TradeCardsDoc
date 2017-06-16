@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 /**
  * @author Edward Ramos
@@ -15,9 +16,17 @@ public class Usuario {
 	@Id
     @GeneratedValue
     private Long id;
+	
+	@NotNull
     private String email;
-    private String nomeCompleto;   
+	
+	@NotNull
+    private String nomeCompleto;
+	
+	@NotNull
     private String senha;
+	
+	@NotNull
     private String telefone;
     
     @ManyToOne

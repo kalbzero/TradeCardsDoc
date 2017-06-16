@@ -3,6 +3,7 @@ package com.tradecards.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 /**
  * @author Edward Ramos
@@ -13,8 +14,13 @@ public class Carta {
 	@Id
     @GeneratedValue
     private Long id;
+	
+	@NotNull
     private String edicao;
+	
+	@NotNull
     private String nome;
+	
     private Boolean ehFoil;
     private Boolean ehAlterada;
 	

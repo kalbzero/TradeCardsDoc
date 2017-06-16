@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Cidade {
@@ -11,6 +12,8 @@ public class Cidade {
 	@Id
     @GeneratedValue
 	private Long id;
+	
+	@NotNull
 	private String nome;
 	
 	@ManyToOne
@@ -67,7 +70,7 @@ public class Cidade {
 
 	@Override
 	public String toString() {
-		return "Cidade [id=" + id + ", nome=" + nome + ", estado=" + estado + "]";
+		return nome + "/" + estado.getUf();
 	}
 
 	

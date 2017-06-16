@@ -31,4 +31,12 @@ public class UsuarioService {
 		return usuarioRepository.findAllByNomeCompletoIgnoreCase(nomeCompleto);
 	}
    
+	public void save(Usuario usuario){
+		this.usuarioRepository.save(usuario);
+	}
+	
+	public Usuario get(Long id){
+		return this.usuarioRepository.findAllByid(id);
+	}
 }
+

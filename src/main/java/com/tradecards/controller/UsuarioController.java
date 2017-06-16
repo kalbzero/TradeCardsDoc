@@ -28,5 +28,4 @@ public class UsuarioController {
 	   return "/user/home";
    }
    
-   
 }

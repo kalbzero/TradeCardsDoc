@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	lang="en">
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
 
-    <title>Trade Cards - Perfil</title>
+    <title th:text="#{home.title}"></title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- Custom CSS -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="css/simple-sidebar.css" rel="stylesheet"/>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,30 +37,28 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="perfil.html">
-                        Trade Cards
-                    </a>
+                    <a href="home.html" th:text="#{sidebar.tradecards}"></a>
                 </li>
                 <li>
-                    <a href="perfil.html">Perfil</a>
+                    <a href="perfil.html" th:text="#{sidebar.perfil}"></a>
                 </li>
                 <li>
-                    <a href="haveList.html">Cartas que Tenho</a>
+                    <a href="haveList.html" th:text="#{sidebar.haveList}"></a>
                 </li>
                 <li>
-                    <a href="wantList.html">Cartas que Quero</a>
+                    <a href="wantList.html" th:text="#{sidebar.wantList}"></a>
                 </li>
                 <li>
-                    <a href="searchCard.html">Buscar Carta</a>
+                    <a href="searchCard.html" th:text="#{sidebar.searchCard}"></a>
                 </li>
                 <li>
-                    <a href="manageCards.html">Gerenciar Cartas</a>
+                    <a href="manageCards.html" th:text="#{sidebar.manageCards}"></a>
                 </li>
                 <li>
-                    <a href="searchUsers.html">Desativar Usuários</a>
+                    <a href="searchUsers.html" th:text="#{sidebar.searchUsers}"></a>
                 </li>
                 <li>
-                    <a href="generateReport.html">Gerar Relatórios</a>
+                    <a href="generateReport.html" th:text="#{sidebar.generateReport}"></a>
                 </li>
             </ul>
         </div>
@@ -74,12 +75,12 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1>Meu Perfil</h1>
-                        <b>E-mail:</b> joao.silva@empresa.com<br>
-                        <b>Nome:</b> João da Silva   <span class="glyphicon glyphicon-pencil"></span><br>
-                        <b>Telefone:</b> (51) 98765-4321   <span class="glyphicon glyphicon-pencil"></span><br>
-                        <b>Local:</b> Porto Alegre - RS   <span class="glyphicon glyphicon-pencil"></span><br>
-                        <button type="button" class="btn btn-info">Alterar Senha</button>
+                        <h1 th:text="#{home.perfil}"></h1>
+                        <b th:text="#{home.name}"></b> <br/>
+                        <b th:text="#{home.email}"></b>   <br/>
+                        <b th:text="#{home.phone}"></b>  <br/> 
+                        <b th:text="#{home.city}"></b>   <br/>
+                        
                     </div>
 
                     

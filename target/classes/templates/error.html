@@ -12,7 +12,7 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
 
-    <title>Trade Cards</title>
+    <title th:text="#{error.title}"></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
@@ -49,7 +49,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         
-                    </li>>
+                    </li>
                     <li>
                         
                     </li>
@@ -66,7 +66,8 @@
                 <div class="col-sm-7">
                     <div class="header-content">
                         <div class="header-content-inner">
-                            <h1>Error 404 - Page not found!</h1>
+                            <h1 th:text="#{error.perfil}"></h1>
+                            <p th:text="#{error.msg}"></p>
                             
                         </div>
                     </div>

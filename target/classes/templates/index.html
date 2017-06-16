@@ -12,7 +12,7 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
 
-    <title>Trade Cards</title>
+    <title th:text="#{index.title}"></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
@@ -41,20 +41,20 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Trade Cards</a>
+                <a class="navbar-brand page-scroll" href="/" th:text="#{index.title}"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#" data-toggle="modal" data-target="#login-modal">Entre</a>
+                        <a href="#" data-toggle="modal" data-target="#login-modal" th:text="#{index.login}"></a>
                     </li>>
                     <li>
-                        <a href="#" data-toggle="modal" data-target="#cadastro-modal">Cadastro</a>
+                        <a href="#" data-toggle="modal" data-target="#cadastro-modal" th:text="#{index.register}"></a>
                     </li>
                     <li>
-                    	<a href="/international"> Idioma</a>
+                    	<a href="/international" th:text="#{index.language}"></a>
                     </li>
                 </ul>
             </div>
@@ -69,8 +69,8 @@
                 <div class="col-sm-7">
                     <div class="header-content">
                         <div class="header-content-inner">
-                            <h1>Trade Cards é um site para você poder trocar as suas cartas de MTG com qualquer jogador do Brasil!</h1>
-                            <a href="#" data-toggle="modal" data-target="#cadastro-modal" class="btn btn-outline btn-xl page-scroll">Cadastre-se, é gratis!</a>
+                            <h1 th:text="#{index.intro1}"></h1>
+                            <a href="#" data-toggle="modal" data-target="#cadastro-modal" class="btn btn-outline btn-xl page-scroll" th:text="#{index.intro2}"></a>
                         </div>
                     </div>
                 </div>
@@ -96,15 +96,15 @@
     <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="loginmodal-container">
-                <h1>Entre na sua conta</h1><br/>
-                <form action="userPerfil.html">
-                    <input type="text" name="user" placeholder="E-mail"/>
-                    <input type="password" name="pass" placeholder="Senha"/>
-                    <input type="submit" name="login" class="login loginmodal-submit" value="Entre"/>
+                <h1 th:text="#{index.text1}"></h1><br/>
+                <form action="#">
+                    <input type="text" name="user" th:placeholder="#{index.name}"/>
+                    <input type="password" name="pass" th:placeholder="#{index.password}"/>
+                    <input type="submit" name="login" class="login loginmodal-submit" th:placeholder="#{index.login}"/>
                 </form>
                     
                 <div class="login-help">
-                    <a href="#" data-toggle="modal" data-target="#password-modal">Recuperar Senha</a>
+                    <a href="#" data-toggle="modal" data-target="#password-modal" th:text="#{index.recover}"></a>
                 </div>
             </div>
         </div>
@@ -113,10 +113,10 @@
     <div class="modal fade" id="password-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="loginmodal-container">
-                <h1>Recuperar a Senha</h1><br/>
+                <h1 th:text="#{index.recover}"></h1><br/>
                 <form>
-                    <input type="text" name="user" placeholder="E-mail"/>
-                    <input type="submit" name="login" class="login loginmodal-submit" value="Enviar"/>
+                    <input type="text" name="user" th:placeholder="#{index.email}"/>
+                    <input type="submit" name="login" class="login loginmodal-submit" th:text="#{index.send}"/>
                 </form>
             </div>
         </div>
@@ -125,14 +125,14 @@
      <div class="modal fade" id="cadastro-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="loginmodal-container">
-                <h1>Cadastre-se</h1><br/>
+                <h1 th:text="#{index.register2}"></h1><br/>
                 <form>
-                    <input type="text" name="name" placeholder="Nome"/>
-                    <input type="text" name="lastName" placeholder="Sobrenome"/>
-                    <input type="text" name="phone" placeholder="Telefone com DDD"/>
-                    <input type="text" name="user" placeholder="E-mail"/>
-                    <input type="password" name="pass" placeholder="Senha"/>
-                    <input type="submit" name="cadastro" class="login loginmodal-submit" value="Cadastro"/>
+                    <input type="text" name="name" th:placeholder="#{index.name}"/>
+                    <input type="text" name="lastName" th:placeholder="#{index.lastName}"/>
+                    <input type="text" name="phone" th:placeholder="#{index.phone}"/>
+                    <input type="text" name="email" th:placeholder="#{index.email}"/>
+                    <input type="password" name="pass" th:placeholder="#{index.password}"/>
+                    <input type="submit" name="cadastro" class="login loginmodal-submit" th:text="#{index.register}"/>
                 </form>
                     
             </div>
@@ -144,13 +144,13 @@
             <p>&copy; 2017 Edward Ramos</p>
             <ul class="list-inline">
                 <li>
-                    <a href="#">Privacy</a>
+                    <a href="#" th:text="#{index.privacy}"></a>
                 </li>
                 <li>
-                    <a href="#">Terms</a>
+                    <a href="#" th:text="#{index.term}"></a>
                 </li>
                 <li>
-                    <a href="#">FAQ</a>
+                    <a href="#" th:text="#{index.faq}"></a>
                 </li>
             </ul>
         </div>

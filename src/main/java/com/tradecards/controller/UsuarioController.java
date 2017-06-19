@@ -1,9 +1,12 @@
 package com.tradecards.controller;
 
+import java.security.Principal;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.tradecards.domain.Usuario;
 import com.tradecards.service.UsuarioService;
 
 /**
@@ -24,8 +27,56 @@ public class UsuarioController {
    
    /* Methods */
    @GetMapping("/home")
-   public String home(){
+   public String home(Principal p){
 	   return "/user/home";
    }
    
+   @GetMapping("/perfil")
+   public String perfil(Usuario u){
+	   return "/user/pefil";
+   }
+   
+   @GetMapping("/haveList")
+   public String haveList(Principal p){
+	   return "/user/haveList";
+   }
+   
+   @GetMapping("/wantList")
+   public String wantList(Principal p){
+	   return "/user/wantList";
+   }
+   
+   @GetMapping("/searchUsers")
+   public String searchUsers(){
+	   return "/admin/searchUsers";
+   }
+   
+   @GetMapping("/generateReport")
+   public String generateReport(){
+	   return "/admin/generateReport";
+   }
+   
+   @GetMapping("/manageCards")
+   public String manageCards(){
+	   return "/admin/manageCards";
+   }
+   
+   /* Edit */
+   @GetMapping("/edit/perfil/{id}")
+   public String editPerfil(){
+	   
+	   return "/user/perfil";
+   }
+   
+   @GetMapping("/edit/haveList/{id}")
+   public String editHaveList(){
+	   
+	   return "/user/haveList";
+   }
+   
+   @GetMapping("/edit/wantList/{id}")
+   public String editWantList(){
+	   
+	   return "/user/wantList";
+   }
 }

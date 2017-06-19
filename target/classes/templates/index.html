@@ -54,7 +54,7 @@
                         <a href="#" data-toggle="modal" data-target="#cadastro-modal" th:text="#{index.register}"></a>
                     </li>
                     <li>
-                    	<a href="/international" th:text="#{index.language}"></a>
+                    	<a th:href="@{/international}" th:text="#{index.language}"></a>
                     </li>
                 </ul>
             </div>
@@ -97,10 +97,10 @@
         <div class="modal-dialog">
             <div class="loginmodal-container">
                 <h1 th:text="#{index.text1}"></h1><br/>
-                <form action="#">
+                <form th:action="@{/home}" method="post">
                     <input type="text" name="user" th:placeholder="#{index.name}"/>
                     <input type="password" name="pass" th:placeholder="#{index.password}"/>
-                    <input type="submit" name="login" class="login loginmodal-submit" th:placeholder="#{index.login}"/>
+                    <input type="submit" name="login" class="login loginmodal-submit" th:value="#{index.login}"/>
                 </form>
                     
                 <div class="login-help">
@@ -116,7 +116,7 @@
                 <h1 th:text="#{index.recover}"></h1><br/>
                 <form>
                     <input type="text" name="user" th:placeholder="#{index.email}"/>
-                    <input type="submit" name="login" class="login loginmodal-submit" th:text="#{index.send}"/>
+                    <input type="submit" name="login" class="login loginmodal-submit" th:value="#{index.send}"/>
                 </form>
             </div>
         </div>
@@ -132,7 +132,7 @@
                     <input type="text" name="phone" th:placeholder="#{index.phone}"/>
                     <input type="text" name="email" th:placeholder="#{index.email}"/>
                     <input type="password" name="pass" th:placeholder="#{index.password}"/>
-                    <input type="submit" name="cadastro" class="login loginmodal-submit" th:text="#{index.register}"/>
+                    <input type="submit" name="cadastro" class="login loginmodal-submit" th:value="#{index.register}"/>
                 </form>
                     
             </div>

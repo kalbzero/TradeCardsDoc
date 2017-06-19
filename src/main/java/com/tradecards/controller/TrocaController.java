@@ -1,6 +1,7 @@
 package com.tradecards.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import com.tradecards.service.CartaService;
 import com.tradecards.service.UsuarioService;
@@ -23,7 +24,10 @@ public class TrocaController {
 	
 	
 	/* Methods */
-	
+	@GetMapping("/searchCard")
+	   public String home(){
+		   return "/user/searchCard";
+	   }
 	
 	
 	

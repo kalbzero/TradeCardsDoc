@@ -19,6 +19,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
                  "/photos/**",
                 "/assets/**",
                 "index**",
+                "**",
                 "international**",
                 "error**",
                 "/img/**",

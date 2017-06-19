@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
+//import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,17 +15,17 @@ public class NotificacaoService {
 	@Autowired
     private ConfigurableApplicationContext c;
 	
-	private JavaMailSender javaMailSender;
+	//private JavaMailSender javaMailSender;
 
 	/* Constructor */
-	public NotificacaoService(ConfigurableApplicationContext c, JavaMailSender javaMailSender) {
+	public NotificacaoService(ConfigurableApplicationContext c) {
 		this.c = c;
-		this.javaMailSender = javaMailSender;
+		//this.javaMailSender = javaMailSender;
 	}
 	
 	/* Methods */
 	public SimpleMailMessage enviarNotificacao(SimpleMailMessage mail) throws MailException {
-        javaMailSender.send(mail);
+        //javaMailSender.send(mail);
         return mail;
     }
 	
@@ -37,7 +37,7 @@ public class NotificacaoService {
         mail.setFrom(c.getEnvironment().getProperty("spring.mail.username"));
         mail.setSubject(object.get("subject"));
         mail.setText(object.get("text"));
-        javaMailSender.send(mail);
+        //javaMailSender.send(mail);
         return mail;
     }
 	

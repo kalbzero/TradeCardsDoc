@@ -64,7 +64,7 @@
                     <a th:href="@{/international}" th:text="#{sidebar.international}"></a>
                 </li>
                 <li>
-                    <a th:href="@{/logout}" th:text="#{sidebar.generateReport}"></a>
+                    <a th:href="@{/logout}" th:text="#{sidebar.logout}"></a>
                 </li>
             </ul>
         </div>
@@ -95,23 +95,41 @@
                           <input type="submit" th:text="#{cards.find}"/>
                         </form>
 
-                        <ul>
-                            <li> Carta 1 <span class="glyphicon glyphicon-remove"></span>   <span class="glyphicon glyphicon-pencil"></span></li> 
-                            <li> Carta 2 <span class="glyphicon glyphicon-remove"></span>   <span class="glyphicon glyphicon-pencil"></span></li> 
-                            <li> Carta 3 <span class="glyphicon glyphicon-remove"></span>   <span class="glyphicon glyphicon-pencil"></span></li>
-                            <li> Carta 4 <span class="glyphicon glyphicon-remove"></span>   <span class="glyphicon glyphicon-pencil"></span></li>
-                            <li> Carta 5 <span class="glyphicon glyphicon-remove"></span>   <span class="glyphicon glyphicon-pencil"></span></li>
-                        </ul>
+                        <table class="table table-bordered">
+                        	<thead>
+						      <tr>
+						        <th th:text="#{cards.name}"></th>
+						        <th th:text="#{cards.edition}"></th>
+						        <th th:text="#{cards.foil}"></th>
+						        <th th:text="#{cards.altered}"></th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						    <tr th:each="card : ${cards}">
+								<td th:text="|${card.name}"></td>
+								<td th:text="|${card.edition}"></td>
+								<td th:text="|${card.foil}"></td>
+								<td th:text="|${card.altered}"></td>
+								<td><a th:href="@{/card/edit}"> 
+									<span class="badge" th:text="#{cards.edit}" />
+									</a> <a th:href="@{/card/delete}" class="delete">
+										<span class="badge" th:text="#{cards.delete}" />
+										</a></td>
+								
+							</tr>
+						    </tbody>
+						    
+                        </table>
 
                         </div>
 
                         <div id="Create" class="tabcontent">
                           <h3 th:text="#{cards.createCard}"></h3>
-                            <input type="text" name="name" placeholder="Nome"/><br/>
-                            <input type="text" name="lastName" placeholder="Edição"/><br/>
-                            <input type="checkbox" name="vehicle" value="Foil"/> É foil?<br/>
-                            <input type="checkbox" name="vehicle" value="Altered"/> Arte Alterada?<br/>
-                            <input type="submit" name="cadastro" class="login loginmodal-submit" th:text="#{cards.submit}"/>
+                            <input type="text" name="name" th:placeholder="#{cards.name}"/><br/>
+                            <input type="text" name="lastName" th:placeholder="#{cards.edition}"/><br/>
+                            <input type="checkbox" name="foil" th:placeholder="#{cards.foil}"/><br/>
+                            <input type="checkbox" name="altered" th:placeholder="#{cards.altered}"/><br/>
+                            <input type="submit" name="submit" class="login loginmodal-submit" th:value="#{cards.submit}"/>
                         </div>
 
                     </div>

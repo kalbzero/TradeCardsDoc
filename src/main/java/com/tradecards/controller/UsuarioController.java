@@ -46,20 +46,6 @@ public class UsuarioController {
 	   return "/user/wantList";
    }
    
-   @GetMapping("/searchUsers")
-   public String searchUsers(){
-	   return "/admin/searchUsers";
-   }
-   
-   @GetMapping("/generateReport")
-   public String generateReport(){
-	   return "/admin/generateReport";
-   }
-   
-   @GetMapping("/manageCards")
-   public String manageCards(){
-	   return "/admin/manageCards";
-   }
    
    /* Edit */
    @GetMapping("/edit/perfil/{id}")

@@ -12,7 +12,7 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
 
-    <title th:text="#{havelist.title}"></title>
+    <title th:text="#{haveList.title}"></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
@@ -34,6 +34,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
+        <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a th:href="@{/user/home}" th:text="#{sidebar.tradecards}"></a>
@@ -84,7 +85,7 @@
                         
                         <form id="searchbox" action="">
                             <input id="search" type="text" th:placeholder="#{haveList.search}"/>
-                            <input id="submit" type="submit" th:text="#{haveList.add}"/>
+                            <input id="submit" type="submit" th:value="#{haveList.add}"/>
                         </form>
 
                         <ul>
@@ -112,9 +113,9 @@
 
     <!-- Menu Toggle Script -->
     <script>
-    $("#menu-toggle").click(function(e) {
+    $('#menu-toggle').click(function(e) {
         e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
+        $('#wrapper').toggleClass('toggled');
     });
     </script>
 

@@ -85,16 +85,30 @@
                         <form action="#">
                           
                           <input type="search" th:placeholder="#{search.search}"/>
-                          <input type="submit" th:text="#{search.find}"/>
+                          <input type="submit" th:value="#{search.find}"/>
                         </form>
                         
-                        <ul>
-                            <li> Carta 01 | Usuário 1</li> 
-                            <li> Carta 01 | Usuário 2</li> 
-                            <li> Carta 01 | Usuário 3</li>
-                            <li> Carta 01 | Usuário 4</li>
-                            <li> Carta 01 | Usuário 5</li>
-                        </ul>
+                        <table class="table table-bordered">
+                        	<thead>
+						      <tr>
+						        <th th:text="#{search.user}"></th>
+						        <th th:text="#{search.name}"></th>
+						        <th th:text="#{search.edition}"></th>
+						        <th th:text="#{search.foil}"></th>
+						        <th th:text="#{search.altered}"></th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						    <tr th:each="search : ${searches}">
+						    	<td th:text="|${search.user}"></td>
+								<td th:text="|${search.name}"></td>
+								<td th:text="|${search.edition}"></td>
+								<td th:text="|${search.foil}"></td>
+								<td th:text="|${search.altered}"></td>
+							</tr>
+						    </tbody>
+						    
+                        </table>
 
                     </div>
                 </div>

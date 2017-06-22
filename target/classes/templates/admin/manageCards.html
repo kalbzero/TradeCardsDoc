@@ -92,7 +92,7 @@
                           <form action="#">
                           
                           <input type="search" th:placeholder="#{cards.search}"/>
-                          <input type="submit" th:text="#{cards.find}"/>
+                          <input type="submit" th:value="#{cards.find}"/>
                         </form>
 
                         <table class="table table-bordered">
@@ -128,8 +128,8 @@
                             <form action="#">
 	                            <input type="text" name="name" th:placeholder="#{cards.name}"/><br/>
 	                            <input type="text" name="lastName" th:placeholder="#{cards.edition}"/><br/>
-	                            <input type="checkbox" name="foil" th:placeholder="#{cards.foil}"/><br/>
-	                            <input type="checkbox" name="altered" th:placeholder="#{cards.altered}"/><br/>
+	                            <input type="checkbox" name="foil" th:text="#{cards.foil}"/><br/>
+	                            <input type="checkbox" name="altered" th:text="#{cards.altered}"/><br/>
 	                            <input type="submit" name="submit" class="login loginmodal-submit" th:value="#{cards.submit}"/>
                         	</form>
                         </div>

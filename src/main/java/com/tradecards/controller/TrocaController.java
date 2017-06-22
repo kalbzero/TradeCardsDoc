@@ -2,6 +2,7 @@ package com.tradecards.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.tradecards.service.CartaService;
 import com.tradecards.service.UsuarioService;
@@ -10,6 +11,7 @@ import com.tradecards.service.UsuarioService;
  * @author Edward Ramos
  */
 @Controller
+@RequestMapping("/user")
 public class TrocaController {
 
 	private UsuarioService usuarioService;

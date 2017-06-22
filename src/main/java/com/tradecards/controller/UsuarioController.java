@@ -32,8 +32,8 @@ public class UsuarioController {
    }
    
    @GetMapping("/perfil")
-   public String perfil(Usuario u){
-	   return "/user/pefil";
+   public String perfil(){
+	   return "/user/perfil";
    }
    
    @GetMapping("/haveList")

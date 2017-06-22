@@ -85,16 +85,30 @@
                         <form action="#">
                           
                           <input type="search" th:placeholder="#{users.perfil}"/>
-                          <input type="submit" th:text="#{users.submit}"/>
+                          <input type="submit" th:value="#{users.submit}"/>
                         </form>
                         
-                        <ul>
-                            <li> Usuário 1 <span class="glyphicon glyphicon-remove"></span></li> 
-                            <li> Usuário 2 <span class="glyphicon glyphicon-remove"></span></li> 
-                            <li> Usuário 3 <span class="glyphicon glyphicon-remove"></span></li>
-                            <li> Usuário 4 <span class="glyphicon glyphicon-remove"></span></li>
-                            <li> Usuário 5 <span class="glyphicon glyphicon-remove"></span></li>
-                        </ul>
+                        <table class="table table-bordered">
+                        	<thead>
+						      <tr>
+						        <th th:text="#{users.name}"></th>
+						        <th th:text="#{users.email}"></th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						    <tr th:each="user : ${users}">
+								<td th:text="|${users.name}"></td>
+								<td th:text="|${users.email}"></td>
+								<td><a th:href="@{/user/edit}"> 
+									<span class="badge" th:text="#{user.edit}" />
+									</a> <a th:href="@{/user/delete}" class="delete">
+										<span class="badge" th:text="#{user.delete}" />
+										</a></td>
+								
+							</tr>
+						    </tbody>
+						    
+                        </table>
 
                     </div>
                 </div>

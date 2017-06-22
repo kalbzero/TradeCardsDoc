@@ -1,9 +1,11 @@
 package com.tradecards.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * @author Edward Ramos
@@ -16,10 +18,16 @@ public class Carta {
     private Long id;
 	
 	@NotNull
+	@Column(length = 20)
+	@Size(min = 1, max = 20)
     private String edicao;
+	//TODO RNG008
 	
 	@NotNull
+	@Column(length = 30)
+	@Size(min = 1, max = 30)
     private String nome;
+	//TODO RNG008
 	
     private Boolean ehFoil;
     private Boolean ehAlterada;

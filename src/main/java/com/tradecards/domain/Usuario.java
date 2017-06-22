@@ -6,6 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Email;
+
 /**
  * @author Edward Ramos
  */
@@ -18,6 +20,7 @@ public class Usuario {
     private Long id;
 	
 	@NotNull
+	@Email
     private String email;
 	
 	@NotNull
@@ -34,6 +37,8 @@ public class Usuario {
     
     @NotNull
     private Boolean ativo;
+    
+    
 
     /*
      * Constructor

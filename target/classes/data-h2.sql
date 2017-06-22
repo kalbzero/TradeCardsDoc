@@ -85,3 +85,15 @@ insert into CARTA (id, edicao, nome, eh_foil, eh_alterada) VALUES
 insert into USUARIO (dtype, id, email, nome_completo, senha, telefone, cidade_id, ativo) values
 ('admin', 1, 'admin1@email.com', 'fulano silva', '$2a$06$W9tq/CrGEw9gxktWSuFGIuBxqxH7nRZELAjTZ3IaJeI3s.35X9H86 ', '(051)9876-54321', 21, TRUE),
 ('user', 2, 'user1@email.com', 'beltrano silva', '$2a$06$W9tq/CrGEw9gxktWSuFGIuBxqxH7nRZELAjTZ3IaJeI3s.35X9H86 ', '(011)9123-45678', 25, TRUE);
+
+-- ROLE
+insert into PAPEL(id, papel) VALUES
+(1, 'Admin'),
+(2, 'User');
+
+-- PAPEL_USUARIO
+insert into PAPEL_USUARIO(usuario_id,papel_id)VALUES
+(1,1),
+(2,2);
+
+

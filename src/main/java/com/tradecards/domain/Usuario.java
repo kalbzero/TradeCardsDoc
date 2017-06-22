@@ -1,8 +1,15 @@
 package com.tradecards.domain;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
@@ -38,7 +45,10 @@ public class Usuario {
     @NotNull
     private Boolean ativo;
     
-    
+    @ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "usuario_papel", joinColumns = { @JoinColumn(name = "usuario_id") }, inverseJoinColumns = { @JoinColumn(name = "papel_id") })
+
+    private Set<Papel> papel =  new HashSet<Papel>();
 
     /*
      * Constructor
@@ -109,6 +119,14 @@ public class Usuario {
 
 	public void setAtivo(Boolean ativo) {
 		this.ativo = ativo;
+	}
+
+	public Set<Papel> getPapel() {
+		return papel;
+	}
+
+	public void setPapel(Set<Papel> papel) {
+		this.papel = papel;
 	}
 
 	@Override

@@ -31,18 +31,22 @@ public class Usuario {
     
     @ManyToOne
     private Cidade cidade;
+    
+    @NotNull
+    private Boolean ativo;
 
     /*
      * Constructor
      */
     		
-	public Usuario(Long id, String email, String nomeCompleto, String senha, String telefone, Cidade cidade) {
+	public Usuario(Long id, String email, String nomeCompleto, String senha, String telefone, Cidade cidade, Boolean ativo) {
 		this.id = id;
 		this.email = email;
 		this.nomeCompleto = nomeCompleto;
 		this.senha = senha;
 		this.telefone = telefone;
 		this.cidade = cidade;
+		this.ativo = ativo;
 	}
 
 	/* Getters 'n' Setters */
@@ -92,6 +96,14 @@ public class Usuario {
 
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
+	}
+	
+	public Boolean getAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(Boolean ativo) {
+		this.ativo = ativo;
 	}
 
 	@Override

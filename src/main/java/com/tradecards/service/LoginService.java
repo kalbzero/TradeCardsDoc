@@ -3,23 +3,28 @@ package com.tradecards.service;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.tradecards.domain.Usuario;
+import com.tradecards.domain.UsuarioLogin;
 import com.tradecards.repository.UsuarioRepository;
 
 
 
 @Service
-public class LoginService {
+public class LoginService implements UserDetailsService{
 
 	private final UsuarioRepository usuarioRepository;
 	private final NotificacaoService notificacaoService;
 
 	/* Constructor*/
+	@Autowired
 	public LoginService(UsuarioRepository usuarioRepository, NotificacaoService notificacaoService) {
 		this.usuarioRepository = usuarioRepository;
 		this.notificacaoService = notificacaoService;
@@ -44,5 +49,21 @@ public class LoginService {
     	options.put("text", "Acesse o link X para alterar a sua senha. ");
     	
     	this.notificacaoService.enviarNotificacao(options);
+	}
+
+
+	@Override
+	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+		return usuarioRepository.findByEmail(email)
+				.map(account -> new UsuarioLogin(
+                        account.getEmail(),
+                        account.getSenha(),
+                        account.getAtivo(),
+                        false, 
+                        false, 
+                        false, 
+                        AuthorityUtils.createAuthorityList("ROLE_ADMIN"),
+                        account
+                )).orElseThrow(() -> new UsernameNotFoundException("couldn't find " + email + "!"));
 	}
 }

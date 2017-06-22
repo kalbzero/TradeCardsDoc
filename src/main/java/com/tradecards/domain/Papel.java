@@ -19,6 +19,10 @@ public class Papel {
 	
 	@ManyToMany
 	private Set<Usuario> usuario = new HashSet<Usuario>();
+	
+	public Papel() {
+		// TODO Auto-generated constructor stub
+	}
 
 	/* Constructor */
 	public Papel(Long id, String papel, Set<Usuario> usuario) {

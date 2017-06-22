@@ -19,6 +19,9 @@ public class Cidade {
 	@ManyToOne
 	private Estado estado;
 
+	public Cidade() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 	/* Constructor */

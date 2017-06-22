@@ -32,6 +32,10 @@ public class Carta {
     private Boolean ehFoil;
     private Boolean ehAlterada;
 	
+    public Carta() {
+		// TODO Auto-generated constructor stub
+	}
+    
     /* Constructor */
     public Carta(Long id, String edicao, String nome, Boolean ehFoil, Boolean ehAlterada) {
 		super();

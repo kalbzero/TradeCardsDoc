@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.tradecards.domain.Carta;
 import com.tradecards.repository.CartaRepository;
+
 /**
  * @author Edward Ramos
  */
@@ -30,5 +31,20 @@ public class CartaService {
 		return cartaRepository.findAllByNomeIgnoreCase(nome);
 	}
 	
+	public Iterable<Carta> list(){
+		return this.cartaRepository.findAll();
+	}
+	
+	public Carta get(Long id) {
+		return cartaRepository.findOne(id);
+	}
+	
+	public void delete(Long id) {
+		cartaRepository.delete(id);
+	}
+	
+	public Carta save(Carta carta) {
+		return cartaRepository.save(carta);
+	}
 	
 }

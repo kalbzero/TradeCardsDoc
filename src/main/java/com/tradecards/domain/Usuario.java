@@ -53,6 +53,10 @@ public class Usuario {
     /*
      * Constructor
      */
+    
+    public Usuario() {
+		// TODO Auto-generated constructor stub
+	}
     		
 	public Usuario(Long id, String email, String nomeCompleto, String senha, String telefone, Cidade cidade, Boolean ativo) {
 		this.id = id;

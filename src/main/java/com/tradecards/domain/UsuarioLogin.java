@@ -10,6 +10,8 @@ public class UsuarioLogin extends User {
 
 	private Usuario usuario;
 	
+	
+	
 	/* Getters 'n' Setters*/
 	public Usuario getusuario(){
 		return usuario;

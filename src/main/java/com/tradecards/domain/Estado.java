@@ -18,6 +18,10 @@ public class Estado {
 	@NotNull
 	private String nome;
 	
+	public Estado() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	/* Constructor */
 	public Estado(Long id, String uf, String nome) {
 		this.id = id;

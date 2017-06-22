@@ -98,7 +98,7 @@
             <div class="loginmodal-container">
                 <h1 th:text="#{index.text1}"></h1><br/>
                 <form th:action="@{/user/home}" method="post">
-                    <input type="text" name="user" th:placeholder="#{index.name}"/>
+                    <input type="text" name="user" th:placeholder="#{index.email}"/>
                     <input type="password" name="pass" th:placeholder="#{index.password}"/>
                     <input type="submit" name="login" class="login loginmodal-submit" th:value="#{index.login}"/>
                 </form>

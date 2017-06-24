@@ -43,12 +43,14 @@ public class MVCConf extends WebMvcConfigurerAdapter{
 	
 	/*
 	 * Tem alguma coisa a ver com login...
+	 *  https://spring.io/guides/gs/securing-web/
 	 */
 	@Override
     public void addViewControllers(ViewControllerRegistry registry) {
         super.addViewControllers(registry);
-        registry.addViewController("/login").setViewName("auth/login");
-        registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
+        registry.addViewController("/home").setViewName("/user/home");
+        registry.addViewController("/").setViewName("home");
+        registry.addViewController("/login").setViewName("index");
     }
 
     

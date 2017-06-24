@@ -1,6 +1,7 @@
 package com.tradecards.domain;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -50,15 +51,17 @@ public class Usuario {
 
     private Set<Papel> papel =  new HashSet<Papel>();
 
-    /*
-     * Constructor
-     */
+    @ManyToMany
+    @JoinTable(name = "have_list", joinColumns = {@JoinColumn(name = "usuario_id") }, inverseJoinColumns = { @JoinColumn(name = "carta_id")})
+    private List<Carta> haveList;
     
-    public Usuario() {
-		// TODO Auto-generated constructor stub
-	}
-    		
-	public Usuario(Long id, String email, String nomeCompleto, String senha, String telefone, Cidade cidade, Boolean ativo) {
+    @ManyToMany
+    @JoinTable(name = "want_list", joinColumns = {@JoinColumn(name = "usuario_id") }, inverseJoinColumns = { @JoinColumn(name = "carta_id")})
+    private List<Carta> wantList;
+    
+    /* Constructors */
+    public Usuario() {}	
+	public Usuario(Long id, String email, String nomeCompleto, String senha, String telefone, Cidade cidade, Boolean ativo, List<Carta> haveList, List<Carta> wantList) {
 		this.id = id;
 		this.email = email;
 		this.nomeCompleto = nomeCompleto;
@@ -66,6 +69,8 @@ public class Usuario {
 		this.telefone = telefone;
 		this.cidade = cidade;
 		this.ativo = ativo;
+		this.haveList = haveList;
+		this.wantList = wantList;
 	}
 
 	/* Getters 'n' Setters */
@@ -131,6 +136,22 @@ public class Usuario {
 
 	public void setPapel(Set<Papel> papel) {
 		this.papel = papel;
+	}
+
+	public List<Carta> getHaveList() {
+		return haveList;
+	}
+
+	public void setHaveList(List<Carta> haveList) {
+		this.haveList = haveList;
+	}
+
+	public List<Carta> getWantList() {
+		return wantList;
+	}
+
+	public void setWantList(List<Carta> wantList) {
+		this.wantList = wantList;
 	}
 
 	@Override

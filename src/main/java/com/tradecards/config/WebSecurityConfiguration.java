@@ -22,7 +22,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
 	
 	@Autowired
 	public void configureAuth(AuthenticationManagerBuilder auth) throws Exception{
-		//auth.userDetailsService(loginService).passwordEncoder(new BCryptPasswordEncoder());
+		auth.userDetailsService(loginService).passwordEncoder(new BCryptPasswordEncoder());
 	}
 	
     @Override
@@ -59,7 +59,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
                  authenticated().and().logout().
                  logoutSuccessUrl("/").permitAll().and().csrf()
                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()).and().formLogin()
-                .loginPage("/home").permitAll().and().logout().deleteCookies("remember-me")
+                .loginPage("/index").permitAll().and().logout().deleteCookies("remember-me")
                 .logoutSuccessUrl("/login?logout").permitAll().and().rememberMe();
         http.csrf().disable();
 

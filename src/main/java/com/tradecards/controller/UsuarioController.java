@@ -36,6 +36,11 @@ public class UsuarioController {
 	   return "/user/perfil";
    }
    
+   @GetMapping("/viewUser/{id}")
+   public String viewUser(){
+	   return "/user/home";
+   }
+   
    @GetMapping("/haveList")
    public String haveList(Principal p){
 	   return "/user/haveList";

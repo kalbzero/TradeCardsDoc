@@ -45,7 +45,7 @@ public class LoginService implements UserDetailsService{
 		
 		Map<String,String> options = new HashMap();
     	options.put("to", email);
-    	options.put("subject", "SYSCALL - Recuperação de senha");
+    	options.put("subject", "TradeCards - Recuperar senha");
     	options.put("text", "Acesse o link X para alterar a sua senha. ");
     	
     	this.notificacaoService.enviarNotificacao(options);

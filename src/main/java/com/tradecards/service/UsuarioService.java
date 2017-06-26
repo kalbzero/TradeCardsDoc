@@ -28,7 +28,7 @@ public class UsuarioService {
 	}
 
 	public Usuario findByFullName(String nomeCompleto){
-		return usuarioRepository.findAllByNomeCompletoIgnoreCase(nomeCompleto);
+		return usuarioRepository.findByNomeCompletoIgnoreCase(nomeCompleto);
 	}
    
 	public void save(Usuario usuario){
@@ -36,7 +36,7 @@ public class UsuarioService {
 	}
 	
 	public Usuario get(Long id){
-		return this.usuarioRepository.findAllByid(id);
+		return this.usuarioRepository.findOneById(id);
 	}
 }
 

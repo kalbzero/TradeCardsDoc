@@ -12,7 +12,7 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
 
-    <title th:text="#{wantList.title}"></title>
+    <title th:text="#{cards.title}"></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
@@ -35,7 +35,7 @@
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
+                        <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a th:href="@{/user/home}" th:text="#{sidebar.tradecards}"></a>
                 </li>
@@ -78,14 +78,25 @@
 
         <div id="page-content-wrapper">
 
+			<div th:if="${message}" class="alert alert-success">
+				<p th:text="${message}" />
+			</div>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 th:text="#{wantList.perfil}"></h1>
-                        
-                        <form id="searchbox" action="">
-                            <input id="search" type="text" th:placeholder="#{wantList.search}"/>
-                            <input id="submit" type="submit" th:value="#{wantList.add}"/>
+                        <h1 th:text="#{cards.perfil}"></h1>
+                        <div class="tab">
+                          <button class="tablinks" onclick="openCity(event, 'Search')" th:text="#{cards.find}"></button>
+                          <button class="tablinks" onclick="openCity(event, 'Create')" th:text="#{cards.create}"></button>
+                          <button class="tablinks" onclick="openCity(event, 'Edit')" th:text="#{cards.edit}"></button>
+                        </div>
+
+                        <div id="Search" class="tabcontent">
+                          <h3 th:text="#{cards.search}"></h3>
+                          <form action="#">
+                          
+                          <input type="search" th:placeholder="#{cards.search}"/>
+                          <input type="submit" th:value="#{cards.find}"/>
                         </form>
 
                         <table id="myTable" class="table table-bordered">
@@ -99,16 +110,49 @@
 						      </tr>
 						    </thead>
 						    <tbody>
-						    <!-- tr th:each="card : ${cards}">
+						    <tr th:each="card : ${cards}">
 								<td th:text="|${card.id}"></td>
 								<td th:text="|${card.nome}"></td>
 								<td th:text="|${card.edicao}"></td>
 								<td th:text="|${card.ehFoil}"></td>
 								<td th:text="|${card.ehAlterada}"></td>
-							</tr -->
+								<td><a href="#"> 
+									<span class="badge tablinks" onclick="openCity(event, 'Edit')" th:text="#{cards.edit}" />
+									</a> <a th:href="@{/card/delete/}+${card.id}" class="delete">
+										<span class="badge" th:text="#{cards.delete}" />
+										</a></td>
+								
+							</tr>
 						    </tbody>
+						    
                         </table>
+
+                        </div>
+
+                        <div id="Create" class="tabcontent">
+                          <h3 th:text="#{cards.createCard}"></h3>
+                            <form th:action="@{/card/save}" method="post">
+	                            <input type="text" name="name" th:placeholder="#{cards.name}"/><br/>
+	                            <input type="text" name="lastName" th:placeholder="#{cards.edition}"/><br/>
+	                            <input type="checkbox" name="foil" th:text="#{cards.foil}"/><br/>
+	                            <input type="checkbox" name="altered" th:text="#{cards.altered}"/><br/>
+	                            <input type="submit" name="submit" 
+	                            class="login loginmodal-submit" th:value="#{cards.submit}"
+	                            onclick="document.getElementById('Create').submit(); return false;"/>
+                        	</form>
+                        </div>
                         
+                        <div id="Edit" class="tabcontent">
+                        	<h3 th:text="#{cards.edit}"></h3>
+                        	<form action="@{/estoque/edit}">
+	                            <input type="text" name="name" th:placeholder="#{cards.name}"/><br/>
+	                            <input type="text" name="lastName" th:placeholder="#{cards.edition}"/><br/>
+	                            <input type="checkbox" name="foil" th:text="#{cards.foil}"/><br/>
+	                            <input type="checkbox" name="altered" th:text="#{cards.altered}"/><br/>
+	                            <input type="submit" name="submit" class="login loginmodal-submit" th:value="#{cards.submit}"/>
+                        	</form>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -126,10 +170,34 @@
 
     <!-- Menu Toggle Script -->
     <script>
-    $("#menu-toggle").click(function(e) {
+    $('#menu-toggle').click(function(e) {
         e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
+        $('#wrapper').toggleClass('toggled');
     });
+    </script>
+
+	<script th:inline="javascript">
+		$(document).ready(function() {
+			$('#myTable').DataTable();
+		});
+	</script>
+    
+    <script th:inline="javascript">
+	/*<![CDATA[*/
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName('tabcontent');
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = 'none';
+        }
+        tablinks = document.getElementsByClassName('tablinks');
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(' active', '');
+        }
+        document.getElementById(cityName).style.display = 'block';
+       evt.currentTarget.className += ' active';
+    };
+    /*]]>*/
     </script>
 
 </body>

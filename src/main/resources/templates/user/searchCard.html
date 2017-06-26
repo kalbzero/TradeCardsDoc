@@ -100,7 +100,7 @@
 						    </thead>
 						    <tbody>
 						    <tr th:each="search : ${searches}">
-						    	<td th:text="|${search.user}"></td>
+						    	<td ><a th:text="|${search.user}"></a></td>
 								<td th:text="|${search.name}"></td>
 								<td th:text="|${search.edition}"></td>
 								<td th:text="|${search.foil}"></td>

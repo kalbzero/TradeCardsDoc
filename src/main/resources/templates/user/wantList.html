@@ -88,13 +88,26 @@
                             <input id="submit" type="submit" th:value="#{wantList.add}"/>
                         </form>
 
-                        <ul>
-                            <li> Carta 01 <span class="glyphicon glyphicon-remove"></span></li> 
-                            <li> Carta 02 <span class="glyphicon glyphicon-remove"></span></li> 
-                            <li> Carta 03 <span class="glyphicon glyphicon-remove"></span></li>
-                            <li> Carta 04 <span class="glyphicon glyphicon-remove"></span></li>
-                            <li> Carta 05 <span class="glyphicon glyphicon-remove"></span></li>
-                        </ul>
+                        <table id="myTable" class="table table-bordered">
+                        	<thead>
+						      <tr>
+						        <th th:text="#{cards.id}"></th>
+						        <th th:text="#{cards.name}"></th>
+						        <th th:text="#{cards.edition}"></th>
+						        <th th:text="#{cards.foil}"></th>
+						        <th th:text="#{cards.altered}"></th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						    <!-- tr th:each="card : ${cards}">
+								<td th:text="|${card.id}"></td>
+								<td th:text="|${card.nome}"></td>
+								<td th:text="|${card.edicao}"></td>
+								<td th:text="|${card.ehFoil}"></td>
+								<td th:text="|${card.ehAlterada}"></td>
+							</tr -->
+						    </tbody>
+                        </table>
                         
                     </div>
                 </div>

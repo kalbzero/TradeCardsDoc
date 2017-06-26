@@ -12,7 +12,7 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
 
-    <title th:text="#{wantList.title}"></title>
+    <title th:text="#{perfil.title}"></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
@@ -81,14 +81,17 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 th:text="#{wantList.perfil}"></h1>
+                        <h1 th:text="#{perfil.myPerfil"></h1>
+                        <b th:text="#{perfil.name}"></b> <!--  p th:text ="${#authentication.getPrincipal().usuario.nome}" ></p--> <br/>
+                        <b th:text="#{perfil.email}"></b> <!--p th:text ="${#authentication.getPrincipal().usuario.email}"></p-->  <br/>
+                        <b th:text="#{perfil.phone}"></b> <!--p th:text ="${#authentication.getPrincipal().usuario.phone}"></p--> <br/> 
+                        <b th:text="#{perfil.city}"></b> <!--p th:text ="${#authentication.getPrincipal().usuario.cidade}"></p-->  <br/>
                         
-                        <form id="searchbox" action="">
-                            <input id="search" type="text" th:placeholder="#{wantList.search}"/>
-                            <input id="submit" type="submit" th:value="#{wantList.add}"/>
-                        </form>
-
-                        <table id="myTable" class="table table-bordered">
+                    </div>
+					<div class="col-lg-12">
+						<h1 th:text="#{haveList.perfil}"></h1>
+						
+						<table id="myTable" class="table table-bordered">
                         	<thead>
 						      <tr>
 						        <th th:text="#{cards.id}"></th>
@@ -109,7 +112,29 @@
 						    </tbody>
                         </table>
                         
-                    </div>
+						<h1 th:text="#{wantList.perfil}"></h1>
+						<table id="myTable" class="table table-bordered">
+                        	<thead>
+						      <tr>
+						        <th th:text="#{cards.id}"></th>
+						        <th th:text="#{cards.name}"></th>
+						        <th th:text="#{cards.edition}"></th>
+						        <th th:text="#{cards.foil}"></th>
+						        <th th:text="#{cards.altered}"></th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						    <!-- tr th:each="card : ${cards}">
+								<td th:text="|${card.id}"></td>
+								<td th:text="|${card.nome}"></td>
+								<td th:text="|${card.edicao}"></td>
+								<td th:text="|${card.ehFoil}"></td>
+								<td th:text="|${card.ehAlterada}"></td>
+							</tr -->
+						    </tbody>
+                        </table>
+					</div>
+                    
                 </div>
             </div>
         </div>

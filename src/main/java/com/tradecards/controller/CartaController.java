@@ -54,7 +54,7 @@ public class CartaController {
 	@RequestMapping("/edit/{id}")
 	public String update(@PathVariable Long id, Model model) {
 		model.addAttribute("cards", cartaService.get(id));
-		model.addAttribute("readonly", false);
+		model.addAttribute("readonly", true);
 		return "/card/manageCards";
 	}
 	

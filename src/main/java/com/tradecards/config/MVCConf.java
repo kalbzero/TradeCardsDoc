@@ -47,10 +47,9 @@ public class MVCConf extends WebMvcConfigurerAdapter{
 	 */
 	@Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        super.addViewControllers(registry);
-        registry.addViewController("/home").setViewName("/user/home");
-        registry.addViewController("/").setViewName("home");
-        registry.addViewController("/login").setViewName("index");
+		super.addViewControllers(registry);
+        registry.addViewController("/login").setViewName("/index");
+        registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
     }
 
     

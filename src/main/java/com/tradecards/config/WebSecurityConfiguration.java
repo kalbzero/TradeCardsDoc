@@ -30,9 +30,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
         web.ignoring().antMatchers(
                 "/webjars/**",
                  "/photos/**",
-                "/assets/**",
-                "index**",
-                "**",
+                
+                
                 "international**",
                 "error**",
                 "/img/**",
@@ -50,7 +49,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {
         http.antMatcher("/**").authorizeRequests().
                 antMatchers(
-                "/index**",
+                
                 "/dist/**",
                 "/webjars**",
                 "/rememberPassword**", 
@@ -59,7 +58,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
                  authenticated().and().logout().
                  logoutSuccessUrl("/").permitAll().and().csrf()
                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()).and().formLogin()
-                .loginPage("/index").permitAll().and().logout().deleteCookies("remember-me")
+                .loginPage("/login").permitAll().and().logout().deleteCookies("remember-me")
                 .logoutSuccessUrl("/login?logout").permitAll().and().rememberMe();
         http.csrf().disable();
 

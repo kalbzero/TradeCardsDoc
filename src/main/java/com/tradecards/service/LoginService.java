@@ -59,9 +59,9 @@ public class LoginService implements UserDetailsService{
                         account.getEmail(),
                         account.getSenha(),
                         account.getAtivo(),
-                        false, 
-                        false, 
-                        false, 
+                        true, 
+                        true, 
+                        true, 
                         AuthorityUtils.createAuthorityList("ROLE_ADMIN"),
                         account
                 )).orElseThrow(() -> new UsernameNotFoundException("couldn't find " + email + "!"));

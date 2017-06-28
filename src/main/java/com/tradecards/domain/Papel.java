@@ -21,7 +21,7 @@ public class Papel {
 	private Set<Usuario> usuario = new HashSet<Usuario>();
 	
 	public Papel() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	/* Constructor */

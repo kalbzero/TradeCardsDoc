@@ -10,9 +10,8 @@ import com.tradecards.domain.Usuario;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
-	public Usuario findByNomeCompletoIgnoreCase(String nomeCompleto);
+	public Usuario findAllByNomeCompletoIgnoreCase(String nomeCompleto);
 	public Optional<Usuario> findByEmail(String email);
-	public Usuario findOneById(Long id);
-	public Usuario findOneByEmail(String email);
+	public Usuario findAllByid(Long id);
 	public List<Usuario> findByNomeCompletoContainingIgnoreCase(String nomeCompleto);
 }

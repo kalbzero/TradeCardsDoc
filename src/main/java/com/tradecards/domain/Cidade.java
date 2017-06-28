@@ -20,7 +20,7 @@ public class Cidade {
 	private Estado estado;
 
 	public Cidade() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	

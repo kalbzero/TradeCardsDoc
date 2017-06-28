@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.tradecards.service.CartaService;
+import com.tradecards.service.TrocaService;
 import com.tradecards.service.UsuarioService;
 
 /**
@@ -15,13 +16,12 @@ import com.tradecards.service.UsuarioService;
 @RequestMapping("/user")
 public class TrocaController {
 
-	private UsuarioService usuarioService;
-	private CartaService cartaService;
+	private TrocaService trocaService;
 	
 	/* Constructor */
-	public TrocaController(UsuarioService usuarioService, CartaService cartaService) {
-		this.usuarioService = usuarioService;
-		this.cartaService = cartaService;
+	public TrocaController(TrocaService trocaService) {
+		this.trocaService = trocaService;
+		
 	}
 	
 	
@@ -29,7 +29,7 @@ public class TrocaController {
 	/* Methods */
 	@GetMapping("/searchCard")
 	   public String home(Model model){
-		model.addAttribute("cartas");
+		model.addAttribute("cards", trocaService.list());
 		   return "/user/searchCard";
 	   }
 	

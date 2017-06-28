@@ -99,12 +99,12 @@
 						      </tr>
 						    </thead>
 						    <tbody>
-						    <tr th:each="search : ${searches}">
-						    	<td ><a th:text="|${search.user}"></a></td>
-								<td th:text="|${search.name}"></td>
-								<td th:text="|${search.edition}"></td>
-								<td th:text="|${search.foil}"></td>
-								<td th:text="|${search.altered}"></td>
+						    <tr th:each="card : ${cards}">
+						    	<td ><a th:text="|${card.user}"></a></td>
+								<td th:text="|${card.name}"></td>
+								<td th:text="|${card.edition}"></td>
+								<td th:text="|${card.foil}"></td>
+								<td th:text="|${card.altered}"></td>
 							</tr>
 						    </tbody>
 						    

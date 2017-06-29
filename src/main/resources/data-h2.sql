@@ -1,5 +1,5 @@
 -- State
-insert into ESTADO (id, uf, nome) VALUES
+insert into STATE (id, uf, name) VALUES
 (1, 'AC', 'Acre'),
 (2, 'AL', 'Alagoas'),
 (3, 'AP', 'Amapa'),
@@ -29,7 +29,7 @@ insert into ESTADO (id, uf, nome) VALUES
 (27, 'TO', 'Tocantins');
 
 -- City
-insert into CIDADE (id, nome, estado_id) VALUES
+insert into CITY (id, name, state_id) VALUES
 (1,	'Rio Branco', 1),
 (2,	'Maceió', 2),
 (3,	'Macapá', 3),
@@ -59,7 +59,7 @@ insert into CIDADE (id, nome, estado_id) VALUES
 (27, 'Palmas', 27); 
 
 -- Cards
-insert into CARTA (id, edicao, nome, eh_foil, eh_alterada) VALUES
+insert into CARD (id, edition, name, is_foil, is_altered) VALUES
 (1, 'lorwyn', 'goblin', FALSE, FALSE),
 (2, 'lorwyn', 'goblin', TRUE, FALSE),
 (3, 'lorwyn', 'goblin', FALSE, TRUE),
@@ -82,24 +82,24 @@ insert into CARTA (id, edicao, nome, eh_foil, eh_alterada) VALUES
 (20, 'lorwyn', 'zumbi', TRUE, TRUE);
 
 -- USER
-insert into USUARIO ( id, email, nome_completo, senha, telefone, cidade_id, ativo) values
+insert into USER( id, email, full_name, password, phone, city_id, active) values
 ( 1, 'admin1@email.com', 'Fulano Silva', '$2a$06$W9tq/CrGEw9gxktWSuFGIuBxqxH7nRZELAjTZ3IaJeI3s.35X9H86 ', '(051)9876-54321', 21, TRUE),
 ( 2, 'user1@email.com', 'Beltrano Silva', '$2a$10$Qji2/icFWIGGQEAv8bbwNuKGrSZyiUUPqE/0SNO2M.BpU.NA6xPhW', '(011)9123-45678', 25, TRUE),
 ( 3, 'user2@email.com', 'Tucano Silva', '$2a$06$W9tq/CrGEw9gxktWSuFGIuBxqxH7nRZELAjTZ3IaJeI3s.35X9H86 ', '(011)9122-45678', 18, TRUE);
 
 -- ROLE
-insert into PAPEL(id, papel) VALUES
+insert into ROLE(id, role) VALUES
 (1, 'ROLE_ADMIN'),
 (2, 'ROLE_USER');
 
 -- PAPEL_USUARIO
-insert into PAPEL_USUARIO(usuario_id,papel_id)VALUES
+insert into ROLE_USER(user_id,role_id)VALUES
 (1,1),
 (3,1),
 (2,2);
 
 -- haveList
-insert into HAVE_LIST(usuario_id, carta_id)VALUES
+insert into HAVE_LIST(user_id, card_id)VALUES
 (1,1),
 (1,2),
 (1,3),
@@ -110,7 +110,7 @@ insert into HAVE_LIST(usuario_id, carta_id)VALUES
 (2,7);
 
 -- wantList
-insert into WANT_LIST(usuario_id, carta_id)VALUES
+insert into WANT_LIST(user_id, card_id)VALUES
 (2,1),
 (2,2),
 (2,3),

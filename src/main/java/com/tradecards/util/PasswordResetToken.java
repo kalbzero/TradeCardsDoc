@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
-import com.tradecards.domain.Usuario;
+import com.tradecards.domain.User;
 
 @Entity
 public class PasswordResetToken {
@@ -22,9 +22,9 @@ public class PasswordResetToken {
   
     private String token;
   
-    @OneToOne(targetEntity = Usuario.class, fetch = FetchType.EAGER)
-    @JoinColumn(nullable = false, name = "usuario_id")
-    private Usuario usuario;
+    @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
+    @JoinColumn(nullable = false, name = "user_id")
+    private User user;
   
     private Date expiryDate;
 }

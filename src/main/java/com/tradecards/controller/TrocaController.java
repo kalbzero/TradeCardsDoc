@@ -23,13 +23,13 @@ public class TrocaController {
 		this.trocaService = trocaService;
 		
 	}
-	
+	public TrocaController(){}
 	
 	
 	/* Methods */
 	@GetMapping("/searchCard")
 	   public String home(Model model){
-		model.addAttribute("cards", trocaService.list());
+		//model.addAttribute("cards", trocaService.list());
 		   return "/user/searchCard";
 	   }
 	

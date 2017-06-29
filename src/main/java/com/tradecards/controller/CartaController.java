@@ -41,6 +41,8 @@ public class CartaController {
 	@GetMapping("/manageCards")
 	public String manageCards(Model model){
 		model.addAttribute("cards",cartaService.list());
+		//TODO RNG001
+		//TODO RNG002
 		return "/admin/manageCards";
 	}
 	
@@ -54,6 +56,7 @@ public class CartaController {
 	@RequestMapping("/edit/{id}")
 	public String update(@PathVariable Long id, Model model) {
 		model.addAttribute("cards", cartaService.get(id));
+		//TODO RNG004
 		model.addAttribute("readonly", true);
 		return "/card/manageCards";
 	}
@@ -61,6 +64,7 @@ public class CartaController {
 	@RequestMapping("/delete/{id}")
 	public String delete(@PathVariable Long id, Model model, RedirectAttributes redirectAttrs, Locale locale) {
 		Carta carta = cartaService.get(id);
+		//TODO RNG006
 		if (carta != null) {
 			cartaService.delete(id);
 			model.addAttribute("message",
@@ -78,9 +82,17 @@ public class CartaController {
 	public String save(@Valid Carta carta, BindingResult bindingResult, Model model, RedirectAttributes redirectAttrs,
 			Locale locale) {
 		if (!bindingResult.hasErrors()) {
+			// TODO RNG007
 			Carta savedCarta = cartaService.save(carta);
-			redirectAttrs.addFlashAttribute("message", messageSource.getMessage("cards.saved", null, locale));
-			return "redirect:/card/manageCards" + "?success";
+			
+			if(savedCarta.getNome() != "" && savedCarta.getEdicao()!= ""){
+				redirectAttrs.addFlashAttribute("message", messageSource.getMessage("cards.saved", null, locale));
+				return "redirect:/card/manageCards" + "?success";
+			}else{
+				redirectAttrs.addFlashAttribute("message", messageSource.getMessage("Blank fields", null, locale));
+				return "redirect:/card/manageCards" + "?error";
+			}
+			
 		}
 		model.addAttribute("readonly", false);
 		return "/card/manageCards";

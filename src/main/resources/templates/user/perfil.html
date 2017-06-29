@@ -82,10 +82,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 th:text="#{perfil.myPerfil}"></h1>
-                        <b th:text="#{perfil.name}"></b> <br/>
-                        <b th:text="#{perfil.email}"></b>   <span class="glyphicon glyphicon-pencil"></span><br/>
-                        <b th:text="#{perfil.phone}"> </b>   <span class="glyphicon glyphicon-pencil"></span><br/>
-                        <b th:text="#{perfil.city}"></b>   <span class="glyphicon glyphicon-pencil"></span><br/>
+                        <b th:text="#{perfil.name}"></b> <!--  p th:text ="${#user.nome}" ></p--> <br/>
+                        <b th:text="#{perfil.email}"></b> <!--p th:text ="${#user.email}"></p-->  <br/>
+                        <b th:text="#{perfil.phone}"></b> <!--p th:text ="${#user.telefone}"></p--> <br/> 
+                        <b th:text="#{perfil.city}"></b> <!--p th:text ="${#user.cidade}"></p-->  <br/>
                         <button type="button" class="btn btn-info" th:text="#{perfil.password}"></button>
                     </div>
 

@@ -32,6 +32,7 @@ public class CartaService {
 	}
 	
 	public Iterable<Carta> list(){
+		//TODO RNG003
 		return this.cartaRepository.findAll();
 	}
 	
@@ -44,7 +45,14 @@ public class CartaService {
 	}
 	
 	public Carta save(Carta carta) {
-		return cartaRepository.save(carta);
+		//TODO RNG005
+		if(carta.getNome()=="" && carta.getEdicao()==""){
+			return carta;
+		}else{
+			//TODO RNG010
+			
+			return cartaRepository.save(carta);
+		}
 	}
 	
 }

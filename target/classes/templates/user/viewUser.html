@@ -82,10 +82,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 th:text="#{perfil.myPerfil"></h1>
-                        <b th:text="#{perfil.name}"></b> <!--  p th:text ="${#authentication.getPrincipal().usuario.nome}" ></p--> <br/>
-                        <b th:text="#{perfil.email}"></b> <!--p th:text ="${#authentication.getPrincipal().usuario.email}"></p-->  <br/>
-                        <b th:text="#{perfil.phone}"></b> <!--p th:text ="${#authentication.getPrincipal().usuario.phone}"></p--> <br/> 
-                        <b th:text="#{perfil.city}"></b> <!--p th:text ="${#authentication.getPrincipal().usuario.cidade}"></p-->  <br/>
+                        <b th:text="#{perfil.name}"></b> <!--  p th:text ="${#user.nome}" ></p--> <br/>
+                        <b th:text="#{perfil.email}"></b> <!--p th:text ="${#user.email}"></p-->  <br/>
+                        <b th:text="#{perfil.phone}"></b> <!--p th:text ="${#user.telefone}"></p--> <br/> 
+                        <b th:text="#{perfil.city}"></b> <!--p th:text ="${#user.cidade}"></p-->  <br/>
                         
                     </div>
 					<div class="col-lg-12">
@@ -102,7 +102,7 @@
 						      </tr>
 						    </thead>
 						    <tbody>
-						    <!-- tr th:each="card : ${cards}">
+						    <!-- tr th:each="card : ${havelist}">
 								<td th:text="|${card.id}"></td>
 								<td th:text="|${card.nome}"></td>
 								<td th:text="|${card.edicao}"></td>
@@ -124,7 +124,7 @@
 						      </tr>
 						    </thead>
 						    <tbody>
-						    <!-- tr th:each="card : ${cards}">
+						    <!-- tr th:each="card : ${wantlist}">
 								<td th:text="|${card.id}"></td>
 								<td th:text="|${card.nome}"></td>
 								<td th:text="|${card.edicao}"></td>
